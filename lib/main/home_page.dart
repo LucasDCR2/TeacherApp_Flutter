@@ -321,8 +321,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => MyPrintPage(
                             alunos: alunosSelecionados,
                             presencaAlunos: presencaAlunos,
-                            selectedDate:
-                                DateFormat('dd/MM/yyyy').format(selectedDate),
+                            selectedDate: DateFormat('dd/MM/yyyy').format(selectedDate),
                             className: widget.turma.nome,
                           ),
                         ),

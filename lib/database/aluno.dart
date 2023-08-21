@@ -8,8 +8,6 @@ class Aluno {
 
   String nome;
   String matricula;
-  String? email;
-  String? telefone;
   int? idade;
   String? serie;
   double? notaP1 = 0.0;
@@ -23,8 +21,6 @@ class Aluno {
     required this.id,
     required this.nome,
     required this.matricula,
-    this.email,
-    this.telefone,
     this.idade,
     this.serie,
     this.notaP1,

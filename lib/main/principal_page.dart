@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, use_build_context_synchronously, prefer_const_declarations
 
+import 'package:dsf1/consultas/consult.pdfs.dart';
 import 'package:dsf1/consultas/consult_alunos.dart';
 import 'package:flutter/material.dart';
 import 'package:dsf1/theme.dart';
@@ -458,9 +459,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                       } else {
                         //====================================< Verificar Matricula >=============================//
 
-                        bool matriculaExists =
-                            await DatabaseHelper.checkMatriculaExists(
-                                matriculaAlu);
+                        bool matriculaExists = await DatabaseHelper.checkMatriculaExists(matriculaAlu);
                         if (matriculaExists) {
                           showDialog(
                             context: context,

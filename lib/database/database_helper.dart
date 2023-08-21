@@ -8,6 +8,7 @@ import 'package:logger/logger.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 
+
 class DatabaseHelper {
   static final Logger _logger = Logger();
   static late Store _store;
@@ -118,7 +119,7 @@ class DatabaseHelper {
         _alunoBox.put(aluno);
       }
 
-      // Remove todas turmas 
+      // Remove todas turmas
       _turmaBox.removeAll();
 
       _logger.d(
@@ -216,6 +217,28 @@ class DatabaseHelper {
 
     return alunosEncontrados.first;
   }
+
+//==========================================< Salvar PDF >========================================//
+
+/*
+static Future<void> savePDFToDatabase(String className, String selectedDate, Uint8List pdfBytes) async {
+    final box = _store.box<PdfDocument>();
+
+    final pdfDocument = PdfDocument(
+      id: 0, 
+      className: className,
+      selectedDate: selectedDate,
+      pdfBytes: pdfBytes,
+    );
+
+    box.put(pdfDocument);
+  }
+
+  static Future<List<PdfDocument>> getPDFDocuments() async {
+    final box = _store.box<PdfDocument>();
+    return box.getAll();
+  }
+*/
 
 //==========================================< Print pra verificar >========================================//
 

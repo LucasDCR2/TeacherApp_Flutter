@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:dsf1/theme.dart';
@@ -107,6 +107,14 @@ class _ConsultAlunoPageState extends State<ConsultAlunoPage> {
                                 icon: Icon(Icons.remove_red_eye,
                                     color: Colors.blue),
                               ),
+
+                              IconButton(
+                                onPressed: () {
+                                 _showNotas(aluno);
+                                },
+                                icon: Icon(Icons.book, color: Colors.orange),
+                              ),
+
                               IconButton(
                                 onPressed: () {
                                   _showAlunoEditPopup(context, aluno);
@@ -330,8 +338,7 @@ class _ConsultAlunoPageState extends State<ConsultAlunoPage> {
       },
     );
   }
-
-  //=============================< Editar Aluno Details >==============================//
+  
 
   void _showAlunoEditPopup(BuildContext context, Aluno aluno) {
     showDialog(
@@ -406,6 +413,40 @@ class _ConsultAlunoPageState extends State<ConsultAlunoPage> {
                   ),
                 ],
               ),
+            ],
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.close, color: Colors.red),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showNotas(Aluno aluno) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Notas do Aluno'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Nota P1: ${aluno.notaP1 ?? "-"}'),
+              SizedBox(height: 8),
+              Text('Nota P2: ${aluno.notaP2 ?? "-"}'),
+              SizedBox(height: 8),
+              Text('Nota T1: ${aluno.notaT1 ?? "-"}'),
+              SizedBox(height: 8),
+              Text('Nota T2: ${aluno.notaT2 ?? "-"}'),
+              SizedBox(height: 8),
+              Text('Média: ${aluno.media ?? "-"}'),
             ],
           ),
           actions: [
