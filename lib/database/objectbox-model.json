@@ -1,0 +1,73 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:6326984160275044103",
+      "lastPropertyId": "3:400183479853746462",
+      "name": "Aluno",
+      "properties": [
+        {
+          "id": "1:1150157594684077802",
+          "name": "id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:2934453558860967631",
+          "name": "nome",
+          "type": 9
+        },
+        {
+          "id": "3:400183479853746462",
+          "name": "matricula",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:5041823271199142816",
+          "name": "turmas",
+          "targetId": "2:2333712964709171989"
+        }
+      ]
+    },
+    {
+      "id": "2:2333712964709171989",
+      "lastPropertyId": "2:4524721376755298925",
+      "name": "Turma",
+      "properties": [
+        {
+          "id": "1:232986936656773937",
+          "name": "id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:4524721376755298925",
+          "name": "nome",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "2:3031233674079310881",
+          "name": "alunos",
+          "targetId": "1:6326984160275044103"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "2:2333712964709171989",
+  "lastIndexId": "0:0",
+  "lastRelationId": "2:3031233674079310881",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
